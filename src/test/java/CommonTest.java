@@ -17,4 +17,11 @@ public class CommonTest {
         TwoSum twoSum = new TwoSum();
         Assert.assertArrayEquals(twoSum.twoSum2(nums, target), new int[]{0, 1});
     }
+
+    @Test
+    public void testReverse() {
+        int x = 0;
+        Reverse reverse = new Reverse();
+        Assert.assertEquals(reverse.reverse(x), 0);
+    }
 }
