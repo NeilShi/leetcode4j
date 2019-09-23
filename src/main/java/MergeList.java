@@ -1,3 +1,8 @@
+import datastructure.ListNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
  * <p>
@@ -8,41 +13,36 @@
  */
 public class MergeList {
     /**
-     * 时间复杂度:
-     * 空间复杂度:
+     * 选择排序
+     * 时间复杂度: O(n^2)
+     * 空间复杂度: O(n)
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode result = null;
-        boolean head = true;
-        while (l1.next != null || l2.next != null) {
-            if (l1.val < l2.val) {
-                if (head) {
-                    result = l1;
-                } else {
-                    result = l1.next;
+        List<ListNode> nodeArrList = new ArrayList<ListNode>();
+        while (l1 != null) {
+            nodeArrList.add(l1);
+            l1 = l1.next;
+        }
+        while (l2 != null) {
+            nodeArrList.add(l2);
+            l2 = l2.next;
+        }
+        ListNode temp;
+        for (int i = 0; i < nodeArrList.size(); i++) {
+            for (int j = i + 1; j < nodeArrList.size(); j++) {
+                if (nodeArrList.get(i).val > nodeArrList.get(j).val) {
+                    temp = nodeArrList.get(i);
+                    nodeArrList.set(i, nodeArrList.get(j));
+                    nodeArrList.set(j, temp);
                 }
-                l1 = l1.next;
-            } else {
-                if (head) {
-                    result = l2;
-                } else {
-                    result = l2.next;
-                }
-                l2 = l2.next;
             }
         }
-        return result;
-    }
-
-    /**
-     * Definition for singly-linked list.
-     */
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
+        for (int i = 0; i < nodeArrList.size() - 1; i++) {
+            nodeArrList.get(i).next = nodeArrList.get(i + 1);
+            if (i == nodeArrList.size() - 2) {
+                nodeArrList.get(i + 1).next = null;
+            }
         }
+        return nodeArrList.size() == 0 ? null : nodeArrList.get(0);
     }
 }
