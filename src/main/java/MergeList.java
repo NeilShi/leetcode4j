@@ -17,7 +17,7 @@ public class MergeList {
      * 时间复杂度: O(n^2)
      * 空间复杂度: O(n)
      */
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
         List<ListNode> nodeArrList = new ArrayList<ListNode>();
         while (l1 != null) {
             nodeArrList.add(l1);
@@ -45,4 +45,45 @@ public class MergeList {
         }
         return nodeArrList.size() == 0 ? null : nodeArrList.get(0);
     }
+
+    /**
+     * 标准答案 递归 todo
+     * 时间复杂度:
+     * 空间复杂度:  1->2->4, 3->4->5
+     */
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l1;
+        }
+        if (l2 == null) {
+            return l2;
+        }
+        if (l1.val < l2.val) {
+            return mergeTwoLists2(l1, mergeTwoLists2(l1.next, l2));
+        } else {
+            return mergeTwoLists2(l2, mergeTwoLists2(l2.next, l1));
+        }
+    }
+
+    /**
+     * 标准答案 迭代
+     * 时间复杂度: O(n^2)
+     * 空间复杂度: O(n) 1->2->4, 3->4->5
+     */
+    public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
+        ListNode preHead = new ListNode(-1);
+        ListNode pre = preHead;
+        while (l1 != null || l2 != null) {
+            if (l1.val < l2.val) {
+                pre.next = l1;
+                l1 = l1.next;
+            } else {
+                pre.next = l2;
+                l2 = l2.next;
+            }
+            pre = pre.next;
+        }
+        return pre;  //todo
+    }
+
 }

@@ -56,6 +56,6 @@ public class CommonTest {
         ListNode l2 = new ListNode(-7);
 
         MergeList ml = new MergeList();
-        ml.mergeTwoLists(l11, l2);
+        ml.mergeTwoLists2(l11, l2);
     }
 }
