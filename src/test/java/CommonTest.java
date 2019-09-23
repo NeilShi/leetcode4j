@@ -24,4 +24,11 @@ public class CommonTest {
         Reverse reverse = new Reverse();
         Assert.assertEquals(reverse.reverse(x), 0);
     }
+
+    @Test
+    public void testValidKH() {
+        String s = "()[]";
+        ValidKH validKH = new ValidKH();
+        Assert.assertTrue(validKH.isValid(s));
+    }
 }
