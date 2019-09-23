@@ -15,25 +15,33 @@
  * 注意: 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
  */
 public class Reverse {
+    /**
+     * 时间复杂度: O(log(x))
+     * 空间复杂度: O(1)
+     * */
     public int reverse(int x) {
         Integer param = new Integer(x);
+        boolean endZero = false;
         char charArr[] = param.toString().toCharArray();
         int resultArrLen = charArr.length;
         while (charArr[resultArrLen - 1] == '0') {
             if (resultArrLen > 1) {
+                endZero = true;
                 resultArrLen--;
             } else {
                 break;
             }
         }
-        if (charArr[0] == '-') {
-            resultArrLen--;
-        }
-        char resultArr[] = new char[resultArrLen];
         int index = 0;
+        char resultArr[] = new char[resultArrLen];
+        if (charArr[0] == '-') {
+            resultArr[index++] = '-';
+        }
         for (int i = charArr.length - 1; i > -1; i--) {
-            if (charArr[i] == '0') {
+            if (charArr[i] == '0' && charArr.length > 1 && endZero) {
                 continue;
+            } else {
+                endZero = false;
             }
             if (charArr[i] == '-') {
                 break;
@@ -41,10 +49,10 @@ public class Reverse {
             resultArr[index] = charArr[i];
             index++;
         }
-        int resultInt = Integer.parseInt(new String(resultArr));
-        if (resultInt < Math.pow(-2, 31) || resultInt > Math.pow(2, 31) - 1) {
+        Long resultLong = Long.parseLong(new String(resultArr));
+        if (resultLong < Math.pow(-2, 31) || resultLong > Math.pow(2, 31) - 1) {
             return 0;
         }
-        return resultInt;
+        return resultLong.intValue();
     }
 }
