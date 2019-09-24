@@ -47,21 +47,31 @@ public class MergeList {
     }
 
     /**
-     * 标准答案 递归 todo
-     * 时间复杂度:
-     * 空间复杂度:  1->2->4, 3->4->5
+     * 标准答案 递归
+     * 时间复杂度: O(m+n)
+     * 空间复杂度: O(m+n)
+     * 示例:
+     * 1->3->5, 2->4->6
+     * mergeTwoLists2(1-3-5, 2-4-6)
+     * 1.next = mergeTwoLists2(3-5, 2-4-6)     return 1-2-3-4-5-6
+     * 2.next = mergeTwoLists2(4-6, 3-5)       return 2-3-4-5-6
+     * 3.next = mergeTwoLists2(5, 4-6)         return 3-4-5-6
+     * 4.next = mergeTwoLists2(6, 5)           return 4-5-6
+     * 5.next = mergeTwoLists2(null, 6)        return 5-6
      */
     public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         if (l1 == null) {
-            return l1;
-        }
-        if (l2 == null) {
             return l2;
         }
+        if (l2 == null) {
+            return l1;
+        }
         if (l1.val < l2.val) {
-            return mergeTwoLists2(l1, mergeTwoLists2(l1.next, l2));
+            l1.next = mergeTwoLists2(l1.next, l2);
+            return l1;
         } else {
-            return mergeTwoLists2(l2, mergeTwoLists2(l2.next, l1));
+            l2.next = mergeTwoLists2(l2.next, l1);
+            return l2;
         }
     }
 
