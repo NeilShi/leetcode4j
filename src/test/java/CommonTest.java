@@ -53,4 +53,11 @@ public class CommonTest {
         MergeList ml = new MergeList();
         ml.mergeTwoLists3(l11, l21);
     }
+
+    @Test
+    public void testPalindrome() {
+        int x = 121;
+        Palindrome palindrome = new Palindrome();
+        Assert.assertTrue(palindrome.isPalindrome(x));
+    }
 }
