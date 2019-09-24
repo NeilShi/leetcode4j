@@ -77,14 +77,21 @@ public class MergeList {
 
     /**
      * 标准答案 迭代
-     * 时间复杂度: O(n^2)
-     * 空间复杂度: O(n) 1->2->4, 3->4->5
+     * 时间复杂度: O(m+n)
+     * 空间复杂度: O(1)
+     * 1->3->5, 2->4->6
      */
     public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
         ListNode preHead = new ListNode(-1);
         ListNode pre = preHead;
         while (l1 != null || l2 != null) {
-            if (l1.val < l2.val) {
+            if (l1 == null) {
+                pre.next = l2;
+                l2 = l2.next;
+            } else if (l2 == null) {
+                pre.next = l1;
+                l1 = l1.next;
+            } else if (l1.val < l2.val) {
                 pre.next = l1;
                 l1 = l1.next;
             } else {
@@ -93,7 +100,7 @@ public class MergeList {
             }
             pre = pre.next;
         }
-        return pre;  //todo
+        return preHead.next;
     }
 
 }
