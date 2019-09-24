@@ -60,4 +60,11 @@ public class CommonTest {
         Palindrome palindrome = new Palindrome();
         Assert.assertTrue(palindrome.isPalindrome(x));
     }
+
+    @Test
+    public void testLongestCommonPrefix() {
+        String strs[] = {"dog","racecar","car"};
+        LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
+        longestCommonPrefix.longestCommonPrefix(strs);
+    }
 }
