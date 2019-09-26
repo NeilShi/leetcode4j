@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 /**
  * 编写一个函数来查找字符串数组中的最长公共前缀。
  * <p>
@@ -20,37 +18,22 @@ import java.util.Stack;
  */
 public class LongestCommonPrefix {
     /**
-     * 时间复杂度: todo
-     * 空间复杂度:
+     * 时间复杂度(待确定): O(maxLength + n)  maxLength为最长字符串长度, n为字符串数组长度
+     * 空间复杂度: O(1)
      */
     public String longestCommonPrefix(String[] strs) {
-        if (strs.length == 0) {
+        if (strs == null || strs.length == 0) {
             return "";
         }
-        Stack<Character> resultStack = new Stack<Character>();
-        boolean flag = true;
-        int it = 0;
-        while (flag) {
-            for (int i = 0; i < strs.length; i++) {
-                if (i == 0) {
-                    resultStack.push(strs[i].toCharArray()[it]);
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                if (prefix.length() == 0) {
+                    return prefix;
                 }
-                if (resultStack.get(resultStack.size() - 1) != strs[i].toCharArray()[it]) {
-                    resultStack.pop();
-                    flag = false;
-                    break;
-                }
-                if (i == strs.length - 1) {
-                    it++;
-                }
+                prefix = prefix.substring(0, prefix.length() - 1);
             }
         }
-        return stackToString(resultStack);
-    }
-
-    private String stackToString(Stack<Character> stack) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stack.stream().forEach(item -> stringBuilder.append(item));
-        return stringBuilder.toString();
+        return prefix;
     }
 }
