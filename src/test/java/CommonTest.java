@@ -2,6 +2,8 @@ import datastructure.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class CommonTest {
     @Test
     public void testTowSum1() {
@@ -63,8 +65,12 @@ public class CommonTest {
 
     @Test
     public void testLongestCommonPrefix() {
-        String strs[] = {"dog","racecar","car"};
+        String strs1[] = {};
+        String strs2[] = {""};
+        String strs3[] = {"a"};
+        String strs4[] = {"abbb","accc","addd"};
+        String strs5[] = {"flower","flow","flight"};
         LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
-        longestCommonPrefix.longestCommonPrefix(strs);
+        longestCommonPrefix.longestCommonPrefix(strs4);
     }
 }
