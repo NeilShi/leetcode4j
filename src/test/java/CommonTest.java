@@ -73,4 +73,11 @@ public class CommonTest {
         LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
         longestCommonPrefix.longestCommonPrefix(strs4);
     }
+
+    @Test
+    public void testSameTree() {
+        // one pass no test
+        SameTree sameTree = new SameTree();
+        Assert.assertTrue(sameTree.isSameTree(null, null));
+    }
 }
