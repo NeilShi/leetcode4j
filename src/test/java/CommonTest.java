@@ -1,6 +1,7 @@
 import datastructure.ListNode;
 import dp.ClimbStairs;
 import dp.MaxSubArray;
+import greedy.MaxProfit;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -92,5 +93,12 @@ public class CommonTest {
     public void testClimbStairs() {
         ClimbStairs climbStairs = new ClimbStairs();
         climbStairs.climbStairsDp(10);
+    }
+
+    @Test
+    public void  testMaxProfit() {
+        // one pass no test
+        MaxProfit maxProfit = new MaxProfit();
+        maxProfit.maxProfit(new int[]{0});
     }
 }
