@@ -91,6 +91,6 @@ public class CommonTest {
     @Test
     public void testClimbStairs() {
         ClimbStairs climbStairs = new ClimbStairs();
-        climbStairs.climbStairsMemo(555);
+        climbStairs.climbStairsDp(10);
     }
 }
