@@ -1,8 +1,7 @@
 import datastructure.ListNode;
+import dp.MaxSubArray;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 public class CommonTest {
     @Test
@@ -79,5 +78,12 @@ public class CommonTest {
         // one pass no test
         SameTree sameTree = new SameTree();
         Assert.assertTrue(sameTree.isSameTree(null, null));
+    }
+
+    @Test
+    public void testMaxSubArray() {
+        MaxSubArray maxSubArray = new MaxSubArray();
+//        maxSubArray.maxSubArray(new int[]{-2,-3,-5});
+        maxSubArray.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
     }
 }
