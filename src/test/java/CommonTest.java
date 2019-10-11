@@ -1,4 +1,5 @@
 import datastructure.ListNode;
+import dp.ClimbStairs;
 import dp.MaxSubArray;
 import org.junit.Assert;
 import org.junit.Test;
@@ -85,5 +86,11 @@ public class CommonTest {
         MaxSubArray maxSubArray = new MaxSubArray();
 //        maxSubArray.maxSubArray(new int[]{-2,-3,-5});
         maxSubArray.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
+    }
+
+    @Test
+    public void testClimbStairs() {
+        ClimbStairs climbStairs = new ClimbStairs();
+        climbStairs.climbStairsMemo(555);
     }
 }
