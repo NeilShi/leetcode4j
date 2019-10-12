@@ -1,9 +1,14 @@
 import datastructure.ListNode;
+import datastructure.TreeNode;
+import dfs.MaxDepth;
 import dp.ClimbStairs;
 import dp.MaxSubArray;
 import greedy.MaxProfit;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class CommonTest {
     @Test
@@ -69,8 +74,8 @@ public class CommonTest {
         String strs1[] = {};
         String strs2[] = {""};
         String strs3[] = {"a"};
-        String strs4[] = {"abbb","accc","addd"};
-        String strs5[] = {"flower","flow","flight"};
+        String strs4[] = {"abbb", "accc", "addd"};
+        String strs5[] = {"flower", "flow", "flight"};
         LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
         longestCommonPrefix.longestCommonPrefix(strs4);
     }
@@ -86,7 +91,7 @@ public class CommonTest {
     public void testMaxSubArray() {
         MaxSubArray maxSubArray = new MaxSubArray();
 //        maxSubArray.maxSubArray(new int[]{-2,-3,-5});
-        maxSubArray.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
+        maxSubArray.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
     }
 
     @Test
@@ -96,9 +101,32 @@ public class CommonTest {
     }
 
     @Test
-    public void  testMaxProfit() {
+    public void testMaxProfit() {
         // one pass no test
         MaxProfit maxProfit = new MaxProfit();
         maxProfit.maxProfit(new int[]{0});
+    }
+
+    @Test
+    public void testMaxDepth() {
+        MaxDepth maxDepth = new MaxDepth();
+        LinkedList<Integer> arr = new LinkedList<>(Arrays.asList(0, 2, 4, 1, null, 3, -1, 5, 1, null, 6, null, 8));
+        arr.addFirst(-1);
+        TreeNode root = constructBinaryTree(arr, 1);
+        maxDepth.maxDepthBfs(root);
+    }
+
+    private TreeNode constructBinaryTree(LinkedList<Integer> arr, int index) {
+        if (index < arr.size()) {
+            Integer value = arr.get(index);
+            if (value != null) {
+                TreeNode t = new TreeNode(value);
+                arr.set(index, 0);
+                t.left = constructBinaryTree(arr, index * 2);
+                t.right = constructBinaryTree(arr, index * 2 + 1);
+                return t;
+            }
+        }
+        return null;
     }
 }
