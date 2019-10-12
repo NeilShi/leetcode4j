@@ -1,5 +1,6 @@
 import datastructure.ListNode;
 import datastructure.TreeNode;
+import bfs.IsSymmetric;
 import dfs.MaxDepth;
 import dp.ClimbStairs;
 import dp.MaxSubArray;
@@ -114,6 +115,15 @@ public class CommonTest {
         arr.addFirst(-1);
         TreeNode root = constructBinaryTree(arr, 1);
         maxDepth.maxDepthBfs(root);
+    }
+
+    @Test
+    public void testIsSymmetric() {
+        IsSymmetric isSymmetric = new IsSymmetric();
+        LinkedList<Integer> arr = new LinkedList<>(Arrays.asList(1,2,2,3,4,4,3));
+        arr.addFirst(-1);
+        TreeNode root = constructBinaryTree(arr, 1);
+        isSymmetric.isSymmetric(root);
     }
 
     private TreeNode constructBinaryTree(LinkedList<Integer> arr, int index) {
