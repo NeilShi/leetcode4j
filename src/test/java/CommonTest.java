@@ -121,7 +121,6 @@ public class CommonTest {
             Integer value = arr.get(index);
             if (value != null) {
                 TreeNode t = new TreeNode(value);
-                arr.set(index, 0);
                 t.left = constructBinaryTree(arr, index * 2);
                 t.right = constructBinaryTree(arr, index * 2 + 1);
                 return t;
