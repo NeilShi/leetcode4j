@@ -23,7 +23,9 @@ import java.util.LinkedList;
  */
 public class IsSymmetric {
     /**
-     * todo
+     * BFS 队列实现
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(N)
      * */
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
@@ -35,7 +37,7 @@ public class IsSymmetric {
         while (!queue.isEmpty()) {
             TreeNode node1 = queue.remove();
             TreeNode node2 = queue.remove();
-            if (node1 == null && node2 == null) return true;
+            if (node1 == null && node2 == null) continue;
             if (node1 == null || node2 == null) return false;
             if (node1.val != node2.val) return false;
             queue.add(node1.left);
