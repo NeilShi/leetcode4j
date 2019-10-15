@@ -120,7 +120,7 @@ public class CommonTest {
     @Test
     public void testIsSymmetric() {
         IsSymmetric isSymmetric = new IsSymmetric();
-        LinkedList<Integer> arr = new LinkedList<>(Arrays.asList(1,2,2,3,4,4,3));
+        LinkedList<Integer> arr = new LinkedList<>(Arrays.asList(9,-42,-42,null,76,76,null,null,13,null,13));
         arr.addFirst(-1);
         TreeNode root = constructBinaryTree(arr, 1);
         isSymmetric.isSymmetric(root);
