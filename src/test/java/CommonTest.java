@@ -3,6 +3,7 @@ import datastructure.TreeNode;
 import bfs.IsSymmetric;
 import dfs.MaxDepth;
 import dp.ClimbStairs;
+import dp.LongestPalindrome;
 import dp.MaxSubArray;
 import greedy.MaxProfit;
 import org.junit.Assert;
@@ -140,7 +141,8 @@ public class CommonTest {
     }
 
     @Test
-    public void testReverseList() {
-        // todo
+    public void testLongestPalindrome() {
+        LongestPalindrome lp = new LongestPalindrome();
+        lp.longestPalindrome("babad");
     }
 }
