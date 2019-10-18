@@ -5,6 +5,7 @@ import datastructure.TreeNode;
 import bfs.IsSymmetric;
 import dfs.MaxDepth;
 import dp.ClimbStairs;
+import dp.LengthOfLIS;
 import dp.LongestPalindrome;
 import dp.MaxSubArray;
 import greedy.MaxProfit;
@@ -160,5 +161,12 @@ public class CommonTest {
         int[] nums = new int[]{-1, 0, 3, 5, 9, 12};
         int target = 9;
         Assert.assertEquals(binarySearch.search(nums, target), 4);
+    }
+
+    @Test
+    public void testLenghOfLIS() {
+        LengthOfLIS lengthOfLIS = new LengthOfLIS();
+        int[] nums = new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80};
+        Assert.assertEquals(6, lengthOfLIS.lengthOfLIS(nums));
     }
 }
