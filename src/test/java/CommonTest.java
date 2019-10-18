@@ -1,3 +1,4 @@
+import binarySearch.BinarySearch;
 import binarySearch.MySqrt;
 import datastructure.ListNode;
 import datastructure.TreeNode;
@@ -151,5 +152,13 @@ public class CommonTest {
     public void testMySqrt() {
         MySqrt mySqrt = new MySqrt();
         Assert.assertEquals(1, mySqrt.mySqrt(3));
+    }
+
+    @Test
+    public void testBinarySearch() {
+        BinarySearch binarySearch = new BinarySearch();
+        int[] nums = new int[]{-1, 0, 3, 5, 9, 12};
+        int target = 9;
+        Assert.assertEquals(binarySearch.search(nums, target), 4);
     }
 }
