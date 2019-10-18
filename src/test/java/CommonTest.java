@@ -1,3 +1,4 @@
+import binarySearch.MySqrt;
 import datastructure.ListNode;
 import datastructure.TreeNode;
 import bfs.IsSymmetric;
@@ -121,7 +122,7 @@ public class CommonTest {
     @Test
     public void testIsSymmetric() {
         IsSymmetric isSymmetric = new IsSymmetric();
-        LinkedList<Integer> arr = new LinkedList<>(Arrays.asList(9,-42,-42,null,76,76,null,null,13,null,13));
+        LinkedList<Integer> arr = new LinkedList<>(Arrays.asList(9, -42, -42, null, 76, 76, null, null, 13, null, 13));
         arr.addFirst(-1);
         TreeNode root = constructBinaryTree(arr, 1);
         isSymmetric.isSymmetric(root);
@@ -144,5 +145,11 @@ public class CommonTest {
     public void testLongestPalindrome() {
         LongestPalindrome lp = new LongestPalindrome();
         lp.longestPalindrome("babad");
+    }
+
+    @Test
+    public void testMySqrt() {
+        MySqrt mySqrt = new MySqrt();
+        Assert.assertEquals(1, mySqrt.mySqrt(3));
     }
 }
