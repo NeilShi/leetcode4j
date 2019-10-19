@@ -146,7 +146,7 @@ public class CommonTest {
     @Test
     public void testLongestPalindrome() {
         LongestPalindrome lp = new LongestPalindrome();
-        lp.longestPalindrome("babad");
+        lp.longestPalindromeDp("fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
     }
 
     @Test
@@ -168,5 +168,14 @@ public class CommonTest {
         LengthOfLIS lengthOfLIS = new LengthOfLIS();
         int[] nums = new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80};
         Assert.assertEquals(6, lengthOfLIS.lengthOfLIS(nums));
+    }
+
+    @Test
+    public void testInOrderTraversal() {
+        InOrderTraversal inOrderTraversal = new InOrderTraversal();
+        LinkedList<Integer> input = new LinkedList<>(Arrays.asList(1,null,2,null,null,3));
+        input.addFirst(-1);
+        TreeNode root = constructBinaryTree(input, 1);
+        inOrderTraversal.inorderTraversal(root);
     }
 }
