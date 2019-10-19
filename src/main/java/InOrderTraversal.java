@@ -19,6 +19,11 @@ import java.util.List;
  * 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
  * */
 public class InOrderTraversal {
+    /**
+     * 递归
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(N)最坏 O(logN)平衡
+     * */
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         recursive(root, ans);
@@ -33,4 +38,8 @@ public class InOrderTraversal {
         ans.add(node.val);
         recursive(node.right, ans);
     }
+
+    /**
+     * other solution
+     * */
 }
