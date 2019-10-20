@@ -1,6 +1,7 @@
 import datastructure.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -40,6 +41,23 @@ public class InOrderTraversal {
     }
 
     /**
-     * other solution
+     * 用栈实现
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(N)
      * */
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            TreeNode node = stack.pop();
+            ans.add(node.val);
+            curr = node.right;
+        }
+        return ans;
+    }
 }
