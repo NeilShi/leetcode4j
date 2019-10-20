@@ -1,3 +1,4 @@
+import backtrack.Subsets;
 import binarySearch.BinarySearch;
 import binarySearch.MySqrt;
 import datastructure.ListNode;
@@ -178,5 +179,11 @@ public class CommonTest {
         input.addFirst(-1);
         TreeNode root = constructBinaryTree(input, 1);
         inOrderTraversal.inorderTraversal(root);
+    }
+
+    @Test
+    public void testSubsets() {
+        Subsets subsets = new Subsets();
+        subsets.subsets(new int[]{1, 2, 3});
     }
 }
