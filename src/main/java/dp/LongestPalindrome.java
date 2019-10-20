@@ -17,6 +17,35 @@ import java.util.HashMap;
  */
 public class LongestPalindrome {
     /**
+     * DP优化暴力法
+     * 时间复杂度：O(n^2)
+     * 空间复杂度：O(n^2)
+     * */
+    public String longestPalindromeDp(String s) {
+        String ans = "";
+        if (s.length() == 0) {
+            return ans;
+        }
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        int maxLen = 0;
+        // 由长度从小到大进行遍历，这样dp[start + 1][end - 1]长度较小一定会先算出来
+        for (int len = 1; len <= s.length(); len ++) {
+            for (int start = 0; start < s.length(); start++) {
+                int end = start + len - 1;
+                if (end >= s.length()) {
+                    break;
+                }
+                dp[start][end] = (len == 1 || len == 2 || dp[start + 1][end - 1]) && s.charAt(start) == s.charAt(end);
+                if (dp[start][end] && len > maxLen) {
+                    maxLen = len;
+                    ans = s.substring(start, end + 1);
+                }
+            }
+        }
+        return ans;
+    }
+
+    /**
      * time out !
      * 暴力法
      * 时间复杂度：O(n^3)
