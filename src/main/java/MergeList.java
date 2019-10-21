@@ -13,6 +13,32 @@ import java.util.List;
  */
 public class MergeList {
     /**
+     * 归并排序的合并思想
+     * 时间复杂度: O(m+n)
+     * 空间复杂度: O(1)
+     * */
+    public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
+        ListNode ans = new ListNode(-1);
+        ListNode head = ans;
+        while (l1 != null || l2 != null) {
+            if (l1 == null) {
+                ans.next = l2;
+                break;
+            } else if (l2 == null) {
+                ans.next = l1;
+                break;
+            } else if (l1.val < l2.val) {
+                ans.next = l1;
+                l1 = l1.next;
+            } else {
+                ans.next = l2;
+                l2 = l2.next;
+            }
+            ans = ans.next;
+        }
+        return head.next;
+    }
+    /**
      * 选择排序
      * 时间复杂度: O(n^2)
      * 空间复杂度: O(n)
@@ -74,33 +100,4 @@ public class MergeList {
             return l2;
         }
     }
-
-    /**
-     * 标准答案 迭代
-     * 时间复杂度: O(m+n)
-     * 空间复杂度: O(1)
-     * 1->3->5, 2->4->6
-     */
-    public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
-        ListNode preHead = new ListNode(-1);
-        ListNode pre = preHead;
-        while (l1 != null || l2 != null) {
-            if (l1 == null) {
-                pre.next = l2;
-                l2 = l2.next;
-            } else if (l2 == null) {
-                pre.next = l1;
-                l1 = l1.next;
-            } else if (l1.val < l2.val) {
-                pre.next = l1;
-                l1 = l1.next;
-            } else {
-                pre.next = l2;
-                l2 = l2.next;
-            }
-            pre = pre.next;
-        }
-        return preHead.next;
-    }
-
 }
