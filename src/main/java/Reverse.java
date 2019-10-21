@@ -16,33 +16,22 @@
  */
 public class Reverse {
     /**
-     * 时间复杂度: O(log(x))
-     * 空间复杂度: O(1)
+     * 时间复杂度: O(x)
+     * 空间复杂度: O(x)
      * */
     public int reverse(int x) {
         Integer param = new Integer(x);
-        boolean endZero = false;
         char charArr[] = param.toString().toCharArray();
         int resultArrLen = charArr.length;
-        while (charArr[resultArrLen - 1] == '0') {
-            if (resultArrLen > 1) {
-                endZero = true;
-                resultArrLen--;
-            } else {
-                break;
-            }
+        while (resultArrLen > 1 && charArr[resultArrLen - 1] == '0') {
+            resultArrLen--;
         }
         int index = 0;
         char resultArr[] = new char[resultArrLen];
         if (charArr[0] == '-') {
             resultArr[index++] = '-';
         }
-        for (int i = charArr.length - 1; i > -1; i--) {
-            if (charArr[i] == '0' && charArr.length > 1 && endZero) {
-                continue;
-            } else {
-                endZero = false;
-            }
+        for (int i = resultArrLen - 1; i > -1; i--) {
             if (charArr[i] == '-') {
                 break;
             }
