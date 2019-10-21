@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.util.LinkedList;
 
 /**
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
@@ -35,16 +35,24 @@ public class ValidKH {
      * 空间复杂度: O(n)
      */
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<Character>();
-        char charArr[] = s.toCharArray();
-        for (int i = 0; i < charArr.length; i++) {
-            if (!stack.empty() && match(stack.peek(), charArr[i])) {
-                stack.pop();
-                continue;
-            }
-            stack.push(charArr[i]);
+        LinkedList<Character> stack = new LinkedList<>();
+        if (s.length() == 0) {
+            return true;
         }
-        return stack.empty();
+        stack.push(s.charAt(0));
+        for (int i = 1; i < s.length(); i++) {
+            if (!stack.isEmpty()) {
+                Character temp = stack.peek();
+                if (match(temp, s.charAt(i))) {
+                    stack.pop();
+                } else {
+                    stack.push(s.charAt(i));
+                }
+            } else {
+                stack.push(s.charAt(i));
+            }
+        }
+        return stack.isEmpty();
     }
 
     private boolean match(char source, char target) {
