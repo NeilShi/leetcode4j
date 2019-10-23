@@ -12,6 +12,7 @@ import dp.MaxSubArray;
 import greedy.MaxProfit;
 import org.junit.Assert;
 import org.junit.Test;
+import sort.MergeSort;
 import sort.QuickSort;
 
 import java.util.Arrays;
@@ -193,6 +194,14 @@ public class CommonTest {
         int[] nums = new int[]{8, 3, 1, 9, 25, 4, 3};
         QuickSort quickSort = new QuickSort();
         quickSort.quickSort(nums, 0, nums.length - 1);
+        Assert.assertTrue(nums.length > 0);
+    }
+
+    @Test
+    public void testMergeSort() {
+        int[] nums = new int[]{8, 3, 1, 9, 25, 4, 3};
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.mergeSort(nums, 0, nums.length - 1);
         Assert.assertTrue(nums.length > 0);
     }
 
