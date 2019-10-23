@@ -12,6 +12,7 @@ import dp.MaxSubArray;
 import greedy.MaxProfit;
 import org.junit.Assert;
 import org.junit.Test;
+import sort.QuickSort;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -186,4 +187,13 @@ public class CommonTest {
         Subsets subsets = new Subsets();
         subsets.subsets(new int[]{1, 2, 3});
     }
+
+    @Test
+    public void testQuickSort() {
+        int[] nums = new int[]{8, 3, 1, 9, 25, 4, 3};
+        QuickSort quickSort = new QuickSort();
+        quickSort.quickSort(nums, 0, nums.length - 1);
+        Assert.assertTrue(nums.length > 0);
+    }
+
 }
