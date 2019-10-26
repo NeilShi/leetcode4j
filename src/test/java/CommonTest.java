@@ -205,4 +205,10 @@ public class CommonTest {
         Assert.assertTrue(nums.length > 0);
     }
 
+    @Test
+    public void testConsecutiveNumbersSum() {
+        ConsecutiveNumbersSum consecutiveNumbersSum = new ConsecutiveNumbersSum();
+        Assert.assertEquals(2, consecutiveNumbersSum.consecutiveNumbersSum(5));
+    }
+
 }
