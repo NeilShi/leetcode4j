@@ -1,5 +1,6 @@
 import backtrack.Subsets;
 import binarySearch.BinarySearch;
+import binarySearch.FindKthNumber;
 import binarySearch.MySqrt;
 import datastructure.ListNode;
 import datastructure.TreeNode;
@@ -209,6 +210,12 @@ public class CommonTest {
     public void testConsecutiveNumbersSum() {
         ConsecutiveNumbersSum consecutiveNumbersSum = new ConsecutiveNumbersSum();
         Assert.assertEquals(2, consecutiveNumbersSum.consecutiveNumbersSum(5));
+    }
+
+    @Test
+    public void testFindKthNumber() {
+        FindKthNumber findKthNumber = new FindKthNumber();
+        findKthNumber.findKthNumber(3, 3, 5);
     }
 
 }
