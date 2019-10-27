@@ -2,6 +2,7 @@ import backtrack.Subsets;
 import binarySearch.BinarySearch;
 import binarySearch.FindKthNumber;
 import binarySearch.MySqrt;
+import com.sun.org.apache.bcel.internal.generic.LADD;
 import datastructure.ListNode;
 import datastructure.TreeNode;
 import bfs.IsSymmetric;
@@ -216,6 +217,15 @@ public class CommonTest {
     public void testFindKthNumber() {
         FindKthNumber findKthNumber = new FindKthNumber();
         findKthNumber.findKthNumber(3, 3, 5);
+    }
+
+    @Test
+    public void testLargestBSTSubtree() {
+        LargestBSTSubtree largestBSTSubtree = new LargestBSTSubtree();
+        LinkedList<Integer> tree = new LinkedList<>(Arrays.asList(10,5,15,1,8,null,7));
+        tree.addFirst(-1);
+        TreeNode root = constructBinaryTree(tree, 1);
+        largestBSTSubtree.largestBSTSubtree(root);
     }
 
 }
