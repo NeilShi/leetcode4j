@@ -12,6 +12,7 @@ import dp.LengthOfLIS;
 import dp.LongestPalindrome;
 import dp.MaxSubArray;
 import greedy.MaxProfit;
+import greedy.RemoveDuplicateLetters;
 import org.junit.Assert;
 import org.junit.Test;
 import sort.MergeSort;
@@ -226,6 +227,12 @@ public class CommonTest {
         tree.addFirst(-1);
         TreeNode root = constructBinaryTree(tree, 1);
         largestBSTSubtree.largestBSTSubtree(root);
+    }
+
+    @Test
+    public void testRemoveDuplicateLetters() {
+        RemoveDuplicateLetters removeDuplicateLetters = new RemoveDuplicateLetters();
+        removeDuplicateLetters.removeDuplicateLetters("bcabc");
     }
 
 }
