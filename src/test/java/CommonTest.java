@@ -232,7 +232,7 @@ public class CommonTest {
     @Test
     public void testRemoveDuplicateLetters() {
         RemoveDuplicateLetters removeDuplicateLetters = new RemoveDuplicateLetters();
-        removeDuplicateLetters.removeDuplicateLetters("bcabc");
+        removeDuplicateLetters.removeDuplicateLetters("cbacdcbc");
     }
 
 }
