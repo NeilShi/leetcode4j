@@ -24,7 +24,7 @@ public class RemoveDuplicateLetters {
         stack.push(s.charAt(0));
         for (int i = 1; i < s.length(); i++) {
             Character ch = s.charAt(i);
-            if (stack.contains(ch)) {  // ??? TODO
+            if (stack.contains(ch)) {  // 前面选完已经最优 后面的重复直接舍弃
                 continue;
             }
             while (!stack.isEmpty() && s.lastIndexOf(stack.peek()) > i && ch < stack.peek()) {
