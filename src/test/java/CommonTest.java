@@ -7,10 +7,7 @@ import datastructure.ListNode;
 import datastructure.TreeNode;
 import bfs.IsSymmetric;
 import dfs.MaxDepth;
-import dp.ClimbStairs;
-import dp.LengthOfLIS;
-import dp.LongestPalindrome;
-import dp.MaxSubArray;
+import dp.*;
 import greedy.MaxProfit;
 import greedy.RemoveDuplicateLetters;
 import org.junit.Assert;
@@ -233,6 +230,12 @@ public class CommonTest {
     public void testRemoveDuplicateLetters() {
         RemoveDuplicateLetters removeDuplicateLetters = new RemoveDuplicateLetters();
         removeDuplicateLetters.removeDuplicateLetters("cbacdcbc");
+    }
+
+    @Test
+    public void testMinDistance() {
+        MinDistance minDistance = new MinDistance();
+        Assert.assertEquals(minDistance.minDistance("horse", "ros"), 3);
     }
 
 }
