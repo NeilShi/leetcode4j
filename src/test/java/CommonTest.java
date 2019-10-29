@@ -279,4 +279,10 @@ public class CommonTest {
         Assert.assertEquals(true, true);
     }
 
+    @Test
+    public void testLevelOrderBottom() {
+        LevelOrderBottom levelOrderBottom = new LevelOrderBottom();
+        Assert.assertEquals(true, true);
+    }
+
 }
