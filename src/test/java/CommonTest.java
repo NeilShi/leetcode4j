@@ -238,4 +238,10 @@ public class CommonTest {
         Assert.assertEquals(minDistance.minDistance("horse", "ros"), 3);
     }
 
+    @Test
+    public void testCountSegments() {
+        CountSegments countSegments = new CountSegments();
+        Assert.assertEquals(5, countSegments.countSegments(" Hello, my name is John "));
+    }
+
 }
