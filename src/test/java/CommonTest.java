@@ -244,4 +244,10 @@ public class CommonTest {
         Assert.assertEquals(5, countSegments.countSegments(" Hello, my name is John "));
     }
 
+    @Test
+    public void testMinIncrementForUnique() {
+        MinIncrementForUnique minIncrementForUnique = new MinIncrementForUnique();
+        Assert.assertEquals(6, minIncrementForUnique.minIncrementForUnique(new int[]{3,2,1,2,1,7}));
+    }
+
 }
