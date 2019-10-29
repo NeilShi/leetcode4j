@@ -250,4 +250,10 @@ public class CommonTest {
         Assert.assertEquals(6, minIncrementForUnique.minIncrementForUnique(new int[]{3,2,1,2,1,7}));
     }
 
+    @Test
+    public void testKthSmallest() {
+        KthSmallest kthSmallest = new KthSmallest();
+        Assert.assertEquals(13, kthSmallest.kthSmallest(new int[][]{{1,5,9},{10,11,13},{12,13,15}}, 8));
+    }
+
 }
