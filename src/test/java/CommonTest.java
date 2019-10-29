@@ -256,4 +256,10 @@ public class CommonTest {
         Assert.assertEquals(13, kthSmallest.kthSmallest(new int[][]{{1,5,9},{10,11,13},{12,13,15}}, 8));
     }
 
+    @Test
+    public void testCheckPossibility() {
+        CheckPossibility checkPossibility = new CheckPossibility();
+        Assert.assertTrue(!checkPossibility.checkPossibility(new int[]{3, 4, 2, 3}));
+    }
+
 }
