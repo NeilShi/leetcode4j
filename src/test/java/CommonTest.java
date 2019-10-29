@@ -1,4 +1,5 @@
 import backtrack.Subsets;
+import bfs.LevelOrder;
 import binarySearch.BinarySearch;
 import binarySearch.FindKthNumber;
 import binarySearch.MySqrt;
@@ -270,6 +271,12 @@ public class CommonTest {
         SpiralOrder spiralOrder = new SpiralOrder();
         List<Integer> except = new ArrayList<>(Arrays.asList(1,2,3,6,9,8,7,4,5));
         Assert.assertEquals(except, spiralOrder.spiralOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
+    }
+
+    @Test
+    public void testLevelOrder() {
+        LevelOrder levelOrder = new LevelOrder();
+        Assert.assertEquals(true, true);
     }
 
 }
