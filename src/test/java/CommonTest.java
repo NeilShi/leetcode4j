@@ -15,8 +15,11 @@ import org.junit.Test;
 import sort.MergeSort;
 import sort.QuickSort;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class CommonTest {
     @Test
@@ -260,6 +263,13 @@ public class CommonTest {
     public void testCheckPossibility() {
         CheckPossibility checkPossibility = new CheckPossibility();
         Assert.assertTrue(!checkPossibility.checkPossibility(new int[]{3, 4, 2, 3}));
+    }
+
+    @Test
+    public void testSpiralOrder() {
+        SpiralOrder spiralOrder = new SpiralOrder();
+        List<Integer> except = new ArrayList<>(Arrays.asList(1,2,3,6,9,8,7,4,5));
+        Assert.assertEquals(except, spiralOrder.spiralOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
     }
 
 }
