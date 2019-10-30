@@ -27,7 +27,6 @@ public class LongestPalindrome {
             return ans;
         }
         boolean[][] dp = new boolean[s.length()][s.length()];
-        int maxLen = 0;
         // 由长度从小到大进行遍历，这样dp[start + 1][end - 1]长度较小一定会先算出来
         for (int len = 1; len <= s.length(); len ++) {
             for (int start = 0; start < s.length(); start++) {
@@ -36,8 +35,7 @@ public class LongestPalindrome {
                     break;
                 }
                 dp[start][end] = (len == 1 || len == 2 || dp[start + 1][end - 1]) && s.charAt(start) == s.charAt(end);
-                if (dp[start][end] && len > maxLen) {
-                    maxLen = len;
+                if (dp[start][end]) {
                     ans = s.substring(start, end + 1);
                 }
             }
