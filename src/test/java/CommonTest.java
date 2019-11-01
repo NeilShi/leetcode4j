@@ -8,6 +8,7 @@ import datastructure.ListNode;
 import datastructure.TreeNode;
 import bfs.IsSymmetric;
 import dfs.MaxDepth;
+import dfs.NumIslands;
 import dp.*;
 import greedy.MaxProfit;
 import greedy.RemoveDuplicateLetters;
@@ -282,6 +283,12 @@ public class CommonTest {
     @Test
     public void testLevelOrderBottom() {
         LevelOrderBottom levelOrderBottom = new LevelOrderBottom();
+        Assert.assertEquals(true, true);
+    }
+
+    @Test
+    public void testNumIslands() {
+        NumIslands numIslands = new NumIslands();
         Assert.assertEquals(true, true);
     }
 
