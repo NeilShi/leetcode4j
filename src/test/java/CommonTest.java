@@ -292,4 +292,12 @@ public class CommonTest {
         Assert.assertEquals(true, true);
     }
 
+    @Test
+    public void testMerge() {
+        Merge merge = new Merge();
+        int[] num1 = {2, 0};
+        int[] num2 = {1};
+        merge.merge(num1, 1, num2, 1);
+        Assert.assertEquals(true, true);
+    }
 }
