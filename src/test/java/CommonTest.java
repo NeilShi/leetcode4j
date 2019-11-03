@@ -11,6 +11,7 @@ import dfs.MaxDepth;
 import dfs.NumIslands;
 import dp.*;
 import greedy.MaxProfit;
+import greedy.MaxProfit2;
 import greedy.RemoveDuplicateLetters;
 import org.junit.Assert;
 import org.junit.Test;
@@ -298,6 +299,12 @@ public class CommonTest {
         int[] num1 = {2, 0};
         int[] num2 = {1};
         merge.merge(num1, 1, num2, 1);
+        Assert.assertEquals(true, true);
+    }
+
+    @Test
+    public void testMaxProfit2() {
+        MaxProfit2 maxProfit2 = new MaxProfit2();
         Assert.assertEquals(true, true);
     }
 }
