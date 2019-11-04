@@ -307,4 +307,12 @@ public class CommonTest {
         MaxProfit2 maxProfit2 = new MaxProfit2();
         Assert.assertEquals(true, true);
     }
+
+    @Test
+    public void testAddTwoNumbers() {
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode l1 = new ListNode(5);
+        ListNode l2 = new ListNode(5);
+        addTwoNumbers.addTwoNumbers(l1, l2);
+    }
 }
