@@ -57,14 +57,19 @@ class LRUCache {
         } else {
             Entry entry = new Entry(key, value);
             if (hashMap.size() >= capacity) {
-                Entry first = head.next;
-                head.next = first.next;
-                first.next.prev = head;
+                Entry first = removeFirst();
                 hashMap.remove(first.getKey());
             }
             hashMap.put(key, entry);
             addToTail(entry);
         }
+    }
+
+    private Entry removeFirst() {
+        Entry first = head.next;
+        head.next = first.next;
+        first.next.prev = head;
+        return first;
     }
 
     public void popToTail(Entry entry) {
