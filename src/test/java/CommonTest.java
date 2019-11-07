@@ -330,4 +330,10 @@ public class CommonTest {
         cache.get(3);       // 返回  3
         cache.get(4);       // 返回  4
     }
+
+    @Test
+    public void testReverseString() {
+        ReverseString reverseString = new ReverseString();
+        Assert.assertEquals(true, true);
+    }
 }
