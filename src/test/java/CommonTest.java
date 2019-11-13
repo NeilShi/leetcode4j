@@ -336,4 +336,10 @@ public class CommonTest {
         ReverseString reverseString = new ReverseString();
         Assert.assertEquals(true, true);
     }
+
+    @Test
+    public void testRemoveNthFromEnd() {
+        RemoveNthFromEnd removeNthFromEnd = new RemoveNthFromEnd();
+        Assert.assertTrue(true);
+    }
 }
